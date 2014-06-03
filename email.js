@@ -40,7 +40,8 @@ var sendEmail = function(email, sid, callback){
             pass: "xxxx"
         }
     });
-    url= "http://192.168.199.238:3000/reset?sid="+sid+"&email="+email;
+
+    var url= "http://192.168.199.238:3000/reset?sid="+encodeURIComponent(sid)+"&email="+email; //use URI encoude to fix the bug
     console.log(url);
     var mailOptions = {
         from: "WeDate",
